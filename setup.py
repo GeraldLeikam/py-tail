@@ -3,7 +3,7 @@ from setuptools import find_packages
 
 setup(
     include_package_data=True,
-    name='py-tail',
+    name='pytail',
     version='0.1.0',
     description='Unix Tail implementation',
     author='Gerald Leikam',
