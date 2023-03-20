@@ -14,6 +14,7 @@ with open(join(here, 'pytail', 'VERSION'), encoding='utf-8') as file:
 setup(
     include_package_data=True,
     name='pytail',
+    py_modules=['tail'],
     version=version,
     description='Unix Tail implementation',
     author='Gerald Leikam',

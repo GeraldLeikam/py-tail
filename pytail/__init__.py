@@ -13,4 +13,4 @@ except NameError:
 except IOError as ex:
     __version__ = "unknown (%s)" % ex
 
-from .tail import Tail
+from .tail import Tail as Tail
