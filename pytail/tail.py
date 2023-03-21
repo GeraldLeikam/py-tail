@@ -31,7 +31,13 @@ from typing import BinaryIO
 
 class Tail:
 
-    def __init__(self, file: str = None, refresh: float = 0.5, encoding: str = 'utf-8', callback=None) -> None:
+    def __init__(
+            self,
+            file: str = None,
+            refresh: float = 0.5,
+            encoding: str = 'utf-8',
+            callback=None
+    ) -> None:
         self.file = file
         if refresh == 0:
             refresh = 0.1
