@@ -1,6 +1,5 @@
 # !/usr/bin/env python
 
-
 # @author Gerald Leikam <gerald.leikam@aol.com>
 
 # @copyright Copyright (c) 2023
@@ -32,13 +31,13 @@ from typing import BinaryIO
 
 class Tail:
 
-    def __init__(self, file: str = None, refresh: float = 0.5, encoding: str = 'utf-8') -> None:
+    def __init__(self, file: str = None, refresh: float = 0.5, encoding: str = 'utf-8', callback=None) -> None:
         self.file = file
         if refresh == 0:
             refresh = 0.1
         self.refresh = refresh
         self.encoding = encoding
-        self.callback = self.build_in_callback
+        self.callback = (callback or self.build_in_callback)
 
     @property
     def callback(self):
@@ -62,6 +61,8 @@ class Tail:
 
     @refresh.setter
     def refresh(self, value: float) -> None:
+        if value == 0:
+            value = 0.1
         self._refresh = value
 
     @property
