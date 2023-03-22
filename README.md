@@ -45,7 +45,7 @@ r = t.bytes(count=50)
 ```
 <br>
 
-## Basic Usage lines ##
+## Basic Usage Lines ##
 ```python
 # Import tail class
 from pytail import tail
