@@ -5,19 +5,22 @@
 python3 setup.py install
 
 ## Basic Usage Follow ##
-```from pytail import tail
+```
+# Import tail class
+from pytail import tail
     
-    --- Create a new tail instance ---
-    t = tail.Tail()
+# Create a new tail instance 
+t = tail.Tail()
     
-    --- Set file to follow --- 
-    t.file = "path/to/file"
+# Set file to follow 
+t.file = "path/to/file"
     
-    --- Register a callback function ---
-    t.callback = callback_function
-    
-    --- Set refresh interval ---
-    t.refresh = 0.5
+# Register a callback function 
+t.callback = callback_function
 
-    --- start following ---
-    t.follow()```
+#Set refresh interval
+t.refresh = 0.5
+
+# Start following
+t.follow()
+```
