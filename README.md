@@ -8,6 +8,10 @@ cd ./py-tail
 python3 setup.py install
 ```
 <br>
+```bash
+curl https://raw.githubusercontent.com/GeraldLeikam/py-tail/master/install.sh | sudo bash
+```
+<br>
 
 ## Basic Usage Follow ##
 ```python
