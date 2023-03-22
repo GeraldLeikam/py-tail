@@ -2,7 +2,9 @@
 
 ## Installation ##
 
+```shell
 python3 setup.py install
+```
 
 ## Basic Usage Follow ##
 ```python
