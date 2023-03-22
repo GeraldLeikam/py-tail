@@ -5,6 +5,7 @@
 ```shell
 python3 setup.py install
 ```
+<br>
 
 ## Basic Usage Follow ##
 ```python
@@ -26,7 +27,8 @@ t.refresh = 0.5
 # Start following
 t.follow()
 ```
-#
+<br>
+
 ## Basic Usage Bytes ##
 ```python
 # Import tail class
@@ -41,7 +43,8 @@ t.file = "path/to/file"
 # Get last 50 bytes from file
 r = t.bytes(count=50)
 ```
-#
+<br>
+
 ## Basic Usage lines ##
 ```python
 # Import tail class
