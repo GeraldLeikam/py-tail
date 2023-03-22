@@ -5,7 +5,7 @@
 python3 setup.py install
 
 ## Basic Usage Follow ##
-```
+```python
 # Import tail class
 from pytail import tail
     
