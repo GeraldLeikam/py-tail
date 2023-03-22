@@ -5,7 +5,7 @@
 python3 setup.py install
 
 ## Basic Usage Follow ##
-    from pytail import tail
+```from pytail import tail
     
     --- Create a new tail instance ---
     t = tail.Tail()
@@ -20,5 +20,4 @@ python3 setup.py install
     t.refresh = 0.5
 
     --- start following ---
-    t.follow()
-     
+    t.follow()```
