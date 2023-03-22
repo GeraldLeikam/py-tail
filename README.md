@@ -3,6 +3,7 @@
 ## Installation ##
 
 ```shell
+git clone https://github.com/GeraldLeikam/py-tail.git
 python3 setup.py install
 ```
 <br>
