@@ -89,13 +89,13 @@ class Tail:
 
     def lines(self, count: int = 20):
         file_object = self.get_file_object()
-        result = self.lines_function(file_object=file_object, n=count)
+        result = self.lines_function(file_object=file_object, n=count, encoding=self.encoding)
         file_object.close()
         return result
 
     def follow(self):
         file_object = self.get_file_object()
-        self.follow_function(file_object=file_object)
+        self.follow_function(file_object=file_object, refresh=self.refresh, callback=self.callback)
         file_object.close()
 
     def bytes(self, count: int = 0):
@@ -104,32 +104,34 @@ class Tail:
         file_object.close()
         return result
 
-    def lines_function(self, file_object: BinaryIO, n: int = 20) -> list[str]:
+    @staticmethod
+    def lines_function(file_object: BinaryIO, n: int = 20, encoding: str = 'utf-8') -> list[str]:
         temporary_n = n + 1
-        result = file_object.read().decode(self.encoding).split('\n')[-temporary_n:]
+        result = file_object.read().decode(encoding).split('\n')[-temporary_n:]
         if result[len(result) - 1] == '':
             del result[len(result) - 1]
         else:
             del result[0]
         return result
 
-    def follow_function(self, file_object: BinaryIO) -> None:
+    @staticmethod
+    def follow_function(file_object: BinaryIO, refresh: float = 0.5, callback=None) -> None:
         file_object.seek(0, 2)
         while True:
             current_position = file_object.tell()
             line = file_object.read()
             if not line:
                 file_object.seek(current_position)
-                sleep(self.refresh)
+                sleep(refresh)
             else:
                 if line.startswith(b'\n'):
                     line = line.replace(b'\n', b'', 1)
                 if b'\n' in line:
                     for line in line.split(b'\n'):
                         if len(line) > 0:
-                            self.callback(line)
+                            callback(line)
                 else:
-                    self.callback(line)
+                    callback(line)
 
     @staticmethod
     def bytes_function(file_object: BinaryIO, count: int = 0) -> bytes:
