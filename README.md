@@ -7,6 +7,10 @@ git clone https://github.com/GeraldLeikam/py-tail.git
 cd ./py-tail
 python3 setup.py install
 ```
+or
+```bash
+curl https://raw.githubusercontent.com/GeraldLeikam/py-tail/master/install.sh | sudo bash
+```
 <br>
 ```bash
 curl https://raw.githubusercontent.com/GeraldLeikam/py-tail/master/install.sh | sudo bash
