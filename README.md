@@ -12,10 +12,6 @@ or
 curl https://raw.githubusercontent.com/GeraldLeikam/py-tail/master/install.sh | sudo bash
 ```
 <br>
-```bash
-curl https://raw.githubusercontent.com/GeraldLeikam/py-tail/master/install.sh | sudo bash
-```
-<br>
 
 ## Basic Usage Follow ##
 ```python
