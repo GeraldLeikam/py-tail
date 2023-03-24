@@ -1,4 +1,4 @@
-# py-tail - Unix tail follow implementation in Python #
+# py-tail - Unix tail implementation in Python #
 
 ## Installation ##
 
